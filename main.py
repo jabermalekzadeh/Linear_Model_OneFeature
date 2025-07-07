@@ -11,7 +11,7 @@ SEED = 42
 np.random.seed(SEED)
 torch.manual_seed(SEED)
 
-x = np.arange(0,100, 0.01)
+x = np.arange(0,100, 0.001)
 noise = np.random.normal(0,100, size=len(x))
 np.random.shuffle(x)
 # y = x**2+noise
@@ -103,7 +103,7 @@ criteria = torch.nn.MSELoss()
 # criteria = torch.nn.SmoothL1Loss()
 
 model.train()
-epochs = 80
+epochs = 120
 Total_loss = []
 Total_loss_eval = []
 for epoch in tqdm(range(epochs), desc= 'Epochs:'):
